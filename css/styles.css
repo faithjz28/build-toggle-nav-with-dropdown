@@ -54,7 +54,23 @@ h1 a {
 }
 
 nav {
-    flex: 1 0 100%;
+    position: absolute;
+    background-color: #f8fafc;
+    width: 98vw;
+    top: 3.75rem;
+    left: 0;
+    /* once this changes to position absolute, it's no longer in the HTML, therefore it's no longer a flex item. */
+    /* flex: 1 0 100%; */
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* special class that will show the nav when the button is clicked (do not add to the html) */
+.show-nav {
+    visibility: visible;
+    opacity: 1;
+    overflow: visible;
 }
 
 .menu li {
@@ -82,6 +98,10 @@ nav {
     max-height: 0;
 }
 
+.submenu li {
+    border-bottom: 1px solid #cbd5e1;
+}
+
 /* what do you hover over ? ----> first selector + :hover
 what do you want to change? ---> second selector */
 
@@ -100,4 +120,55 @@ what do you want to change? ---> second selector */
         width: 1000px;
         margin: 0 auto;
     }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+        color: white;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    nav {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        overflow: visible;
+        width: unset;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        
+    }
+
+    nav li {
+        margin-left: 1.875rem;
+    }
+    
+    .submenu {
+        display: flex;
+        flex-direction: column;
+        background-color: #cbd5e1;
+        position: absolute;
+        overflow: hidden;
+    }
+
+    /* .inner-container > a {
+        order: 1;
+    } */
+
+    a:nth-child(3) {
+        order: 1;
+    }
+
+
+    /* To do:
+    1. layout the 3 top level links horizontally, side by side
+    2. layout the submenu link (dropdown for wider screen)
+    3. add focus or keyboard focus to the dropdown links */
+
 }
